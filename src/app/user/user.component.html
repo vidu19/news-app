@@ -1,0 +1,25 @@
+<br>
+<h3>User Details</h3>
+<br>
+<div class="table-responsive">          
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let x of userdata">
+          <td>{{x.Name}}</td>
+          <td>{{x.Email}}</td>
+          <td>
+             <a href="#"> <span class="glyphicon glyphicon-thumbs-up"></span></a>
+              <a routerLink="update" routerLinkActive="active"> 
+                  <span class="glyphicon glyphicon-edit"></span></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>

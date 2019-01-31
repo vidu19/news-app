@@ -1,0 +1,13 @@
+<form>
+  <div class="form-group" >
+  <label for="email"><br><br>Email Id   </label>
+     <input type="email" class="form-control" placeholder="Enter Email" #email>
+<br><br>
+
+     <label for="pwd">Password   </label>
+     <input type="password" class="form-control" placeholder="Enter Password" #password >
+<br><br>
+
+</div>
+<button  type="button" (click)="login(email, password)" class="btn btn-primary" >Login</button>
+</form>
