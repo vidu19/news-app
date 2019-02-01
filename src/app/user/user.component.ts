@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdminprojectService } from '../adminproject.service';
 import { UserData } from './UserData';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -10,7 +11,11 @@ import { Subscription } from 'rxjs';
 })
 export class UserComponent implements OnInit {
 
-  constructor(private project: AdminprojectService) { }
+  constructor(private project: AdminprojectService, private router: Router) { }
+
+  userUpdate(){
+    this.router.navigate(['/update']);
+  }
 
   userdata: UserData[];
   s: Subscription;

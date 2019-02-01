@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RegisterModel } from '../register/RegisterModel';
 import { AdminprojectService } from '../adminproject.service';
+import { UpdateUser } from './UpdateModel';
 
 @Component({
   selector: 'app-update',
@@ -9,10 +9,11 @@ import { AdminprojectService } from '../adminproject.service';
 })
 export class UpdateComponent implements OnInit {
 
-  constructor(private project: AdminprojectService) { }
 
+  constructor(private project: AdminprojectService) { }
+  
   update(name,email,password){
-    let data=new RegisterModel(name.value,email.value,password.value);
+    let data=new UpdateUser(name.value,email.value,password.value);
     this.project.updateUser(data);
   }
   ngOnInit() {

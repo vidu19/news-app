@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
     let data= new LoginModel(email.value,password.value);
   
     this.project.checkUser(data);
-    console.log("hii")
+    console.log("hii");
      this.router.navigate(['/dashboard']);
   }
   ngOnInit() {
