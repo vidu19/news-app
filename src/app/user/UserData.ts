@@ -2,9 +2,11 @@ export class UserData{
     Name: String;
     Email: String;
     Password: String;
-    constructor(private name,private email,private pass){
+    Rating: Number;
+    constructor(private name,private email,private pass, private rating){
         this.Name= name;
         this.email= email;
         this.Password=pass;
+        this.Rating=rating;
     }
 }

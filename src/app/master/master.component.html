@@ -1,3 +1,45 @@
-<p>
-  master works!
-</p>
+<div class="main">
+  <select #tab_name>
+      <option value="Top">Top</option>
+      <option value="Bollywood">Bollywood</option>
+      <option value="Sport"> Sport</option>
+
+   </select>
+   <select #sequence>
+       <option value="1">1</option>
+       <option value="2">2</option>
+       <option value="3">3</option>
+   </select>
+
+
+
+
+
+
+   <button type="submit" (click)="asubmit(tab_name.value,sequence.value)">add</button>
+   <hr>
+ 
+   <table class="table" *ngIf="!flag">
+     <thead>
+       <tr >
+         <td>tab name</td>
+         <td> sequence </td>
+         <td>actions</td>
+       </tr>
+       </thead>
+       <tbody>
+       <tr  *ngFor="let i of anews; let j=index">
+           <td>{{i.tab}}</td>
+           <td>  {{i.seq}}</td>
+           <td><a><span class="glyphicon glyphicon-thumbs-up"></span></a>
+
+               <a (click)="del(i,j)"><span class="glyphicon glyphicon-trash"></span></a>
+           </td>
+         </tr>
+         </tbody>
+     </table>
+ </div>
+
+
+
+

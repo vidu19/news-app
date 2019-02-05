@@ -12,6 +12,7 @@ import { ApproutingModule } from './approuting.module';
 import { RouterModule } from '@angular/router';
 import { SidenavbarComponent } from './sidenavbar/sidenavbar.component';
 import { UpdateComponent } from './update/update.component';
+import { AddnewsComponent } from './addnews/addnews.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { UpdateComponent } from './update/update.component';
     RatingComponent,
     RegisterComponent,
     SidenavbarComponent,
-    UpdateComponent
+    UpdateComponent,
+    AddnewsComponent
   ],
   imports: [
     BrowserModule,

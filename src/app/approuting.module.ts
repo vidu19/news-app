@@ -8,6 +8,7 @@ import { RatingComponent } from './rating/rating.component';
 import { MasterComponent } from './master/master.component';
 import { RegisterComponent } from './register/register.component';
 import { UpdateComponent } from './update/update.component';
+import { AddnewsComponent } from './addnews/addnews.component';
 
 const routes : Routes =[{
   path: '',
@@ -37,6 +38,10 @@ const routes : Routes =[{
 {
   path: 'register',
   component: RegisterComponent
+},
+{
+  path: 'addnews',
+  component: AddnewsComponent
 },
 {
   path: 'update',

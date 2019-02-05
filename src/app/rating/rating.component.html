@@ -1,3 +1,20 @@
-<p>
-  rating works!
-</p>
+<br>
+<br>
+<div class="dash">
+<div class="table-responsive" >          
+    <table class="table">
+      <thead>
+        <tr>
+          <th>User Name</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let x of userdata">
+          <td>{{x.Name}}</td>
+          <td>{{x.Rating}}</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
