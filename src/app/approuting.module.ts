@@ -9,6 +9,8 @@ import { MasterComponent } from './master/master.component';
 import { RegisterComponent } from './register/register.component';
 import { UpdateComponent } from './update/update.component';
 import { AddnewsComponent } from './addnews/addnews.component';
+import { LogoutComponent } from './logout/logout.component';
+import { NewsshowComponent } from './newsshow/newsshow.component';
 
 const routes : Routes =[{
   path: '',
@@ -46,6 +48,14 @@ const routes : Routes =[{
 {
   path: 'update',
   component: UpdateComponent
+},
+{
+  path: 'logout',
+  component: LogoutComponent
+},
+{
+  path: 'newsshow',
+  component: NewsshowComponent
 }];
 
 @NgModule({

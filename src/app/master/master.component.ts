@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminprojectService } from '../adminproject.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-master',
@@ -7,15 +8,21 @@ import { AdminprojectService } from '../adminproject.service';
   styleUrls: ['./master.component.css']
 })
 export class MasterComponent implements OnInit {
-
-  constructor(private service: AdminprojectService) { }
+takenToken;
+  constructor(private service: AdminprojectService, private router: Router) { }
 
   ngOnInit() {
+    this.takenToken = this.service.gettoken();
+    if(!this.takenToken)
+    {
+      this.router.navigate(['/login']);
+    }
   }
 
   anews=this.service.sendseq();
   flag;
   asubmit(t,s){
+    console.log(this.anews);
   this.flag=!this.flag;
   console.log(t,s);
   this.anews.push({"tab":t, "seq":s});

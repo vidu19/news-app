@@ -17,9 +17,16 @@ export class AddnewsComponent implements OnInit {
   a;
   s:Subscription;
 
+  da=new Date();
+  dd= this.da.getDate();
+  dm=this.da.getMonth() + 1;
+  dy=this.da.getFullYear();
+  dat=this.dd+','+this.dm +','+ this.dy;
+      
   addNews( name,url,desc,cat )
   {
-    this.add = new Addnews(name,url,desc,cat);
+    
+    this.add = new Addnews(name,url,desc,cat,this.dat);
     this.a = this.project.NewNews(this.add);
     this.s = this.a.subscribe((data) => {
     console.log(data); 
@@ -32,8 +39,13 @@ export class AddnewsComponent implements OnInit {
     });
     this.router.navigate(['/dashboard']);
   }
-
+takenToken;
   ngOnInit() {
+    this.takenToken = this.project.gettoken();
+    if(!this.takenToken)
+    {
+      this.router.navigate(['/login']);
+    }
   }
 
 }

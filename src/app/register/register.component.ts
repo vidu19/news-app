@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
+  takenToken;
+
   constructor(private project: AdminprojectService, private router: Router) { }
 
   signup(name, email, pass){
@@ -18,6 +20,11 @@ export class RegisterComponent implements OnInit {
     this.router.navigate(['/login']);
   }
   ngOnInit() {
+    this.takenToken = this.project.gettoken();
+    if(!this.takenToken)
+    {
+      this.router.navigate(['/login']);
+    }
   }
 
 }

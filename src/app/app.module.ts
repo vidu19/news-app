@@ -13,6 +13,8 @@ import { RouterModule } from '@angular/router';
 import { SidenavbarComponent } from './sidenavbar/sidenavbar.component';
 import { UpdateComponent } from './update/update.component';
 import { AddnewsComponent } from './addnews/addnews.component';
+import { LogoutComponent } from './logout/logout.component';
+import { NewsshowComponent } from './newsshow/newsshow.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { AddnewsComponent } from './addnews/addnews.component';
     RegisterComponent,
     SidenavbarComponent,
     UpdateComponent,
-    AddnewsComponent
+    AddnewsComponent,
+    LogoutComponent,
+    NewsshowComponent
   ],
   imports: [
     BrowserModule,

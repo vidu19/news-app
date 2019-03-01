@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { RegisterModel } from './register/RegisterModel';
 import { UpdateUser } from './update/UpdateModel';
 import { Addnews } from './addnews/AddNews';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,11 @@ export class AdminprojectService {
 
   uri="http://localhost:3000";
   public userd;
+data2;
+  constructor(private http: HttpClient,private router: Router) {
+    this.data2 = this.http.get(this.uri+"/ShowAllnews");
 
-  constructor(private http: HttpClient,private router: Router) { }
+   }
 
   s : RegisterModel;
   addAdmin(s){
@@ -24,14 +28,25 @@ export class AdminprojectService {
   }
 
   s1 : LoginModel;
-  checkUser(s1){
+  checkUser(s1): Observable<HttpResponse<LoginModel>>
+  {
     console.log(s1);
-    this.http.post(this.uri+'/login',s1).subscribe((res)=>{console.log('Login Successful');
-    this.router.navigate(['/dashboard']);
-  });
+    return this.http.post<LoginModel>(this.uri+'/login',s1,{observe: 'response'});
+  
   }
 
   data= this.http.get(this.uri+'/userdata');
+
+  usr;
+  updateUserSend(x){
+    //console.log(x);
+    this.usr=x;
+  }
+
+  updateUserReturn(){
+    //console.log(this.usr);
+    return this.usr;
+  }
 
   d : UpdateUser;
   updateUser(d){
@@ -39,6 +54,39 @@ export class AdminprojectService {
     this.http.post(this.uri+'/update',d).subscribe((res)=> {console.log('User Updated')
   });
   }
+
+aruser;
+  
+setuser(req){
+
+  this.aruser=req;
+  console.log(req);
+ this.router.navigate(['/dashboard']);
+}
+
+returnuser(){
+  console.log(this.aruser);
+  return this.aruser;
+}
+
+logout(){
+  this.j= localStorage.getItem("x-token");
+  console.log(this.j);
+  localStorage.removeItem("x-token");
+  this.http.post('http://localhost:3000/logoutAdmin',{"token":this.j}).subscribe((res)=> { console.log("done");
+  this.router.navigate(['/login']);
+});
+}
+
+j;
+settoken(t){
+this.j=t;
+localStorage.setItem('x-token',t);
+}
+
+gettoken(){
+return localStorage.getItem('x-token');
+}
 
   addn: Addnews
 
@@ -67,6 +115,7 @@ export class AdminprojectService {
     sequen(){
       return this.http.get('http://localhost:3000/tab_sequence');
     }
+    
     anews;
     setseq(h){
     this.anews=h;

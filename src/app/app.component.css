@@ -41,4 +41,6 @@
  /* Increased text to enable scrolling */
     padding: 0px 10px;
   } 
-  
+ h2,h3{
+   display: inline;
+ }

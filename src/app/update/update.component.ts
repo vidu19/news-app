@@ -9,14 +9,19 @@ import { UpdateUser } from './UpdateModel';
 })
 export class UpdateComponent implements OnInit {
 
-
-  constructor(private project: AdminprojectService) { }
+  user;
+  constructor(private project: AdminprojectService) { 
+    this.user= this.project.updateUserReturn();
+    console.log(this.user);
+  }
   
+   
   update(name,email,password){
     let data=new UpdateUser(name.value,email.value,password.value);
     this.project.updateUser(data);
   }
   ngOnInit() {
+    
   }
 
 }

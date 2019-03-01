@@ -1,29 +1,3 @@
-<!--<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-2" style="background-color: darkgrey; height: 722px;">
-      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Dashboard</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">User's<br></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Master</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <div class="col-sm-10" style="background-color:white;">
-    <div class="header1" style="background-color:skyblue; padding: 0; height:100px; margin-top: 0; margin-left: 0; margin-right: 0;">
-      <h2 style="color:white;"><br> &nbsp; Admin Panel - Newz</h2>
-    </div>
-    <app-login></app-login>
-    </div>
-  </div>
-</div> -->
-
 <div class="sidenav"><!-- 
   <input type="text" placeholder="Search.." name="search">
   <button type="submit"><i class="fa fa-search"></i></button> --><br><br>
@@ -37,17 +11,17 @@
   <a routerLink="/rating" routerLinkActive="active">Ratings</a>
   <a routerLink="/master" routerLinkActive="active">Master</a>
   <a routerLink="/addnews" routerLinkActive="active">Add News</a>
+  <a routerLink="/newsshow" routerLinkActive="active">News</a>
+  <a routerLink="/register" routerLinkActive="active">Signup</a>
 </div>
-<!--<app-sidenavbar></app-sidenavbar>-->
 <div class="main">
   <div class="header1" style="background-color:skyblue; padding: 0; height:100px; margin-top: 0; margin-left: 0; margin-right: 0;">
-    <h2 style="color:white;"><br> &nbsp; Admin Panel - Newz</h2>
+    <div style="clear:both">
+    <h2 style="color:white; float: left;" ><br> &nbsp; Admin Panel - Newz</h2>
+    <i class="glyphicon glyphicon-user" style="align:right; font-size:60px;color: white; margin-top: 10px; margin-left:800px;" routerLink="/logout" routerLinkActive="active"></i>
+     <!--  <h3 routerLink="/logout" routerLinkActive="active" style="color: white; float: right; margin-right: 100px;">Logout</h3> -->
+      </div>
+      <hr/>
   </div>
-  <!--<mat-form-field>
-      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field> -->
-
 </div>
 <router-outlet></router-outlet>
